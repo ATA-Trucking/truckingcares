@@ -1,0 +1,61 @@
+.gsc-video-box{
+    position: relative;
+    .gsc-video-link{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: -45px;
+        text-align: center;
+        width: 100%;
+        z-index: 1;
+        .icon-play{
+            background: url('#{$base-theme-image-path}/icon-play.png') no-repeat center center $nocolor;
+            @include size(85px, 85px);
+            display: inline-block;
+            @include scale(1);
+            @include transition(all 0.35s);
+            &:hover{
+                @include scale(.8);
+            }
+        }
+       .video-title{
+            display: block;
+            font-size: 18px;
+            font-weight: 700;
+            color: $white;
+            text-transform: uppercase;
+        }    
+    }
+    #gsc-video-overlay{
+        overflow: hidden;
+        position: absolute;
+        @include size(100%, 100%);
+        z-index: 99;
+        top: 0;
+        left: 0;
+        &:hover{
+            .video-close{
+                @include opacity(1);
+                top: 0;
+            }
+        }
+    }
+    .loaded{
+        max-width: 100%;
+    }
+    .video-close{
+        @include transition(all 0.35s);
+        display: block;
+        text-align: center;
+        position: absolute;
+        top: -50px;
+        @include size(100%, 30px);
+        color: $white;
+        background: rgba(0, 0, 0, 0.6);
+        font-size: 48px;
+        font-weight: 900;
+        line-height: 0.5;
+        z-index: 999;
+        @include opacity(0);
+    }
+  }

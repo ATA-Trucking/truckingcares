@@ -1,0 +1,6 @@
+type: module
+name : Gavias Charityplus Themer
+description : Gavias Charityplus Themer
+package: gavias
+core_version_requirement: ^8.8 || ^9 || ^10
+project: 'gavias_hook_themer'

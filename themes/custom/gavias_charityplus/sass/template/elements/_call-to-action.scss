@@ -1,0 +1,186 @@
+/********************** Call to action **************************/
+.gsc-call-to-action{
+  &.button-right{
+    position: relative;
+    .title{
+      margin: 0 0 10px!important;
+    }
+    .content{
+      padding-right: 150px;
+      @media(max-width: 640px){
+        padding-right: 0;
+      }
+      p{
+        margin: 0;
+      }
+    }
+    .button-action{
+      position: absolute;
+      right: 0;
+      top: 50%;
+      @include translateY(-50%);
+      z-index: 1;
+      @media(max-width: 640px){
+        position: relative;
+        top: 0;
+        @include translateY(0);
+        margin-top: 15px;
+      }
+    }
+  }
+  &.button-left{
+    position: relative;
+    text-align: right;
+    .title{
+      margin: 0!important;
+    }
+    .content{
+      padding-left: 120px;
+      p{
+        margin: 0;
+      }
+    }
+    .button-action{
+      position: absolute;
+      left: 0;
+      top: 50%;
+      @include translateY(-50%);
+      z-index: 1;
+    }
+  }
+  &.button-bottom{
+    padding: 30px 0;
+    .title{
+      font-size: 38px;
+      position: relative;
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+      margin-top: 0;
+      &:after{
+        content: "";
+        @include size(80px, 2px);
+        background: $theme-color;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        position: absolute;
+      }
+    }
+    .desc{
+      font-size: 17px;
+      line-height: 32px;
+    }
+    .button-action{
+      margin-top: 30px;
+    }
+    &.v2{
+      padding: 0;
+      .title{
+        font-size: 35px;
+      }
+      .desc{
+        font-size: 15px;
+        line-height: 28px;
+      }
+    }
+    &.text-light{
+      .title{
+        &:after{
+          background: $white;
+        }
+      }
+    }
+  }
+  &.button-bottom-v3{
+    padding: 30px 0;
+    .title{
+      font-size: 60px;
+      position: relative;
+      padding-bottom: 0;
+      font-family: $font-family-base;
+      margin-bottom: 20px;
+      @include media-breakpoint-down(md){
+        font-size: 36px;
+      }
+    }
+    .desc{
+      font-size: 17px;
+      line-height: 32px;
+    }
+    .button-action{
+      margin-top: 40px;
+    }
+    &.text-light{
+      .title{
+        &:after{
+          background: $white;
+        }
+      }
+    }
+  }
+  &.button-bottom-v4{
+    padding: 150px 0;
+    text-align: center;
+    @include media-breakpoint-down(md){
+      padding: 50px;
+    }
+    .title{
+      font-weight: 100;
+      font-size: 80px;
+      position: relative;
+      padding-bottom: 45px;
+      font-family: $headings-font-family;
+      margin-bottom: 45px;
+      &:after{
+        content: "";
+        @include size(100px, 2px);
+        background: $theme-color!important;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        margin-left: -50px;
+        z-index: 1;
+      }
+      @include media-breakpoint-down(md){
+        font-size: 46px;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        line-height: 50px;
+      }
+      strong{
+        color: $theme-color;
+        font-weight: 100;
+      }
+    }
+    .desc{
+      font-size: 17px;
+      line-height: 32px;
+      max-width: 730px;
+      margin: 0 auto;
+    }
+    .button-action{
+      margin-top: 50px;
+    }
+    &.text-light{
+      .title{
+        &:after{
+          background: $white;
+        }
+      }
+    }
+  }
+  &.text-light{
+    .content{
+      color: $white;
+      .title{
+        color: $white;
+      }
+      .desc *{
+        color: $white;
+      }
+    }
+    .subtitle{
+      color: $white;
+    }
+  }
+}  

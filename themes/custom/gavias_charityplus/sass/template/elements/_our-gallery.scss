@@ -1,0 +1,71 @@
+.gsc-our-gallery{
+  .title{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    color: $black;
+    text-align: center;
+    font-weight: 900;
+  }
+  &.remove-padding {
+    .init-carousel-owl .owl-item > .item {
+      padding: 0;
+    }
+  }
+  .content-inner:hover {
+    .image {
+      &:after {
+        @include opacity(90%);
+      }
+      &:before {
+        @include transform(scale(1));
+      }
+    }
+  }
+  .image {
+    position: relative;
+    text-align: center;
+    &:after {
+      content: "";
+      background: $black;
+      @include opacity(0);
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      width: 100%;
+      height: 100%;
+      @include transition(all 0.35s);
+    }
+    &:before {
+      content: "+";
+      color: #fff;
+      background: $theme-color-second;
+      font-size: 40px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -41px;
+      margin-left: -41px;
+      text-align: center;
+      z-index: 1;
+      line-height: 83px;
+      @include size(83px,83px);
+      @include border-radius(83px);
+      @include transform(scale(0));
+      @include transition(all 0.35s);
+    }
+  }
+  .owl-nav{
+    .owl-prev{
+      margin-left: 90px!important;
+    }
+    .owl-next{
+      margin-right: 90px!important;
+    }
+  }
+}

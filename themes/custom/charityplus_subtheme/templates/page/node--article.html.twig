@@ -1,0 +1,30 @@
+{#
+  node--article.html.twig
+  Custom template for displaying article nodes.
+#}
+
+<article class="node--article {{ node.bundle() }} {{ node.isPromoted() ? 'node--promoted' : '' }} {{ node.isSticky() ? 'node--sticky' : '' }} {{ not node.isPublished() ? 'node--unpublished' : '' }}">
+  <header>
+    <div class="article-image">
+      {{ content.field_image }}
+    </div>
+    <h2 style="margin-bottom: 5px; font-family: 'Arial', sans-serif; font-weight: 400;">{{ label }}</h2> <!-- Explicitly set font-weight to normal -->
+    <div class="article-meta" style="margin-bottom: 20px; font-family: 'Arial', sans-serif;">
+      <!--<span class="article-category" style="color: red !important;">{{ content.field_category.0|render }}</span>
+      / --><span class="article-date" style="color: #696969;">{{ node.getCreatedTime|date("d F Y") }}</span>
+     <!-- / <span class="article-comments">{{ content.field_comments|default('0 Comments') }}</span> -->
+    </div>
+  </header>
+  <div class="content" style="margin-top: 20px; font-family: 'Arial', sans-serif;">
+    {{ content.body|raw }}
+  </div>
+</article>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const strongElements = document.querySelectorAll('.content strong, .content b');
+    strongElements.forEach(element => {
+      element.style.fontWeight = '900'; // Increase the boldness
+    });
+  });
+</script>

@@ -1,0 +1,139 @@
+.gsc-image-content{
+  &.skin-v1{
+    position: relative;
+    margin-bottom: 30px;
+    color: $white;
+    .image{
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      img{
+        @include transition(all 3s);
+      }
+    }  
+    .content{
+      position: absolute;
+      padding: 20px 30px 20px;
+      background: rgba(0, 0, 0, 0.66);
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      .title{
+        padding: 0;
+        margin: 0;
+        a{
+          font-size: 20px;
+          font-weight: 400;
+          color: $white;
+          font-family: $headings-font-family;
+          span{
+            margin-right: 10px;
+            font-size: 30px;
+            position: relative;
+            top: 2px;
+          }
+        }
+      }
+      .desc{
+        display: none;
+        @include transition(all 0.35s);
+        margin-top: 15px;
+      }
+      .read-more{
+        margin-top: 20px;  
+        display: none;
+      }
+    }
+
+    &:hover, &:focus, &:active{
+      .content{
+        height: 100%;
+      }
+      .desc{
+         display: block;
+      }
+      .read-more{
+        display: block;
+      }
+    }
+  }
+  &.skin-v2{
+    position: relative;
+    margin-bottom: 30px;
+    @include border-radius(5px);
+    overflow: hidden;
+    min-height: 280px;
+    @include media-breakpoint-down(sm){
+      min-height: 1px; 
+    }
+    .bg-color{
+      @include opacity(0.9);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 6;
+      @include size(100%, 100%);
+      background: $theme-color;
+      @include border-radius(5px);
+    }
+    .image{
+      position: relative;
+      z-index: 1;
+      @include border-radius(5px);
+      text-align: center;
+      img{
+        height: 100%;
+        max-width: 1000px!important;
+        @include media-breakpoint-down(sm){
+          height: auto;
+          max-width: 100%!important;
+        } 
+      }
+    }
+    .content{
+      padding: 40px 30px 30px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include size(100%, 100%);
+      z-index: 9;
+      text-align: center;
+      color: $white;
+      @include media-breakpoint-down(md){
+        padding: 20px;
+      }
+      a{
+        color: $white;
+        &:hover, &:focus, &:active{
+          color: $theme-color;
+        }
+      }
+      .icon{
+        font-size: 55px;
+        line-height: 1;
+        margin: 0 0 20px;
+        @include media-breakpoint-down(md){
+          font-size: 45px;
+          margin: 0 0 10px;
+        }
+      }
+      .title{
+        font-size: 25px;
+        font-weight: 500;
+        font-family: $font-family-base;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        @include media-breakpoint-down(md){
+          font-size: 23px;
+        }
+        a{
+          color: $white;
+          &:hover, &:focus, &:active{
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

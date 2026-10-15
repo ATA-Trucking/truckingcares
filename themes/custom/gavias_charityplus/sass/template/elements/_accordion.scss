@@ -1,0 +1,55 @@
+.gsc-accordion{
+  .panel {
+    padding: 0;       
+    .panel-title {  
+      margin-bottom: 0;    
+      >a {
+        background: transparent;
+        font-size: 18px;
+        font-weight: bold;        
+        padding: 25px 30px; 
+        padding-right: 65px;
+        border: 1px solid $border-color;
+        &.collapsed {
+          background-color: #f8f4f0;
+          border: 0;
+          margin-bottom: 20px;
+          &:after {
+            background: #fff;
+            color: $black;
+          }
+        }
+        &:after {
+          top: 22px;
+          right: 30px;
+          color: #fff;
+          background: $theme-color-second;
+          text-align: center;
+          line-height: 35px;
+          @include size(35px,35px);
+          @include border-radius (35px);
+        }
+      }
+    }
+    .panel-body {
+      font-size: 18px;
+      padding: 30px;
+      border-left: 1px solid $border-color;
+      border-right: 1px solid $border-color;
+      border-bottom: 1px solid $border-color;
+      margin-bottom: 20px;
+      @include box-shadow (0px 20px 20px 0 rgba(0, 0, 0, 0.05)); 
+    }
+  }
+  .collapse.in {
+    display: block;
+  }
+  .panel-group{
+    &.skin-dark{
+      
+    }
+    &.skin-white-border{
+      
+    }
+  }
+}

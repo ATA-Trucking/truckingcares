@@ -1,0 +1,88 @@
+.gsc-service-carousel{  
+  &.style-v1 {
+    text-align: center;
+    .item {
+      padding-top: 5px;
+    }
+    .icon i{
+      color: $theme-color;    
+      height: 150px;
+      font-size: 60px;
+      line-height: 150px;
+      width: 150px;        
+      margin-bottom: 20px;
+      display: inline-block;
+      @include border-radius(100%);
+      @include transition(all 0.35s);
+      @include box-shadow(0 0 0 3px #f8f4f0 inset);
+      position: relative;
+      &:after {
+        pointer-events: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        @include border-radius(100%);
+        @include transition(transform 0.2s);
+        content: '';
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        top: -2px;
+        left: -2px;
+        padding: 2px;
+        z-index: -1;
+        background: #f8f4f0;
+      }
+    }
+    .title a{
+      font-weight: 700;
+      color: $black;
+      line-height: 22px;
+    }  
+    .content-inner {
+      text-align: center;
+      min-height: 170px;
+      margin-bottom: 30px;        
+      &:hover, &:focus, &:active{
+        .icon i {
+          color: $white;
+          @include box-shadow(0 0 0 3px $theme-color inset);
+          &:after {
+            background: $theme-color;
+            @include transform(scale(0.85));
+          }
+        }
+      }
+    }
+    .read-more{
+      margin-top: 30px;
+    }
+  }  
+  &.style-v2 {
+    .content-inner {
+      text-align: center;
+      padding: 60px;
+      background: url('#{$base-theme-image-path}/bg-icon-h4.png') no-repeat -45px -40px #fff;
+      &:hover, &:focus, &:active{
+        background: url('#{$base-theme-image-path}/bg-icon-hover-h4.png')  no-repeat -45px -40px $theme-color;
+        .title a{
+          color: $white;
+        }
+        .icon i {
+          color: $white;         
+        }
+      }
+    }
+    .icon i{
+      color: $theme-color-second;          
+      font-size: 60px;   
+      margin-bottom: 30px; 
+      display: inline-block;  
+    }
+    .title a{
+      font-weight: 700;
+      color: $black;
+      line-height: 2;
+    } 
+  } 
+}

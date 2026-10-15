@@ -1,0 +1,584 @@
+.campaign-block{
+   margin-bottom: 30px;
+   .image{
+      position: relative;
+      text-align: center; 
+      .icon-expand{
+         position: absolute;
+         top: 15px;
+         right: 15px;
+         color: rgba(255, 255, 255, 0.8);
+         z-index: 11;
+         font-size: 18px;
+      }
+      .video-link{
+         position: absolute;
+         top: 15px;
+         right: 45px;
+         color: rgba(255, 255, 255, 0.8);
+         z-index: 11;
+         font-size: 18px; 
+      }
+      .funded{
+         width: 80px;
+         height: 80px;
+         position: absolute;
+         bottom: -40px;
+         left: 50%;
+         margin-left: -40px;
+         z-index: 11;
+         background: rgba(255, 255, 255, 0.92);
+         @include border-radius(50%);
+         .progress{
+            margin-bottom: 0;
+         }
+         span{
+            font-size: 18px;
+            font-weight: 600;
+            font-family: $headings-font-family;
+            color: $theme-color;
+         }
+      }
+   }
+   .campaign-content{
+      position: relative;
+      padding: 55px 30px 20px;
+      background: $white;
+      @include media-breakpoint-down(lg){
+         padding-left: 25px;
+         padding-right: 25px;
+      }
+      .title{
+         margin-bottom: 15px;
+         a{
+            font-size: 20px;
+            font-family: $headings-font-family;
+         }
+      }
+      .content-raised{
+         .raised{
+            color: #1db3e7;
+            font-size: 20px;
+            font-weight: 500;
+         }
+         .goal{
+            color: $theme-color;
+            font-size: 20px;
+            font-weight: 500;
+         }
+      }
+      .days{
+         padding-left: 10px;
+      }
+      .content-action{
+         margin: 15px 0;
+      }
+   }
+   &.campaign-block-3{
+      .campaign-content{
+         padding-top: 10px; 
+      }
+      .funded{
+         @include size(100%, auto);
+         background: none;
+         @include border-radius(0);
+         bottom: 0;
+         left: 0;
+         margin-left: 0;
+      }
+   }
+}
+
+.campaign-block-2{
+   margin-bottom: 30px;
+   .funded{
+      top: 50%;
+      margin-top: -40px;
+      bottom: auto;
+   }
+   .title{
+      margin: 0;
+   }
+   .campaign-content{
+      padding: 30px 30px 20px;
+   }
+   .content-action{
+      position: absolute;
+      top: 110%;
+      left: 0;
+      width: 100%;
+      background: $theme-color;
+      z-index: 11;
+      @include opacity(0);
+      @include transition(all 0.35s);
+      margin: 0!important;
+      a{ 
+         width: 100%;
+         text-align: center;
+         color: $white;
+         font-family: $font-family-base;
+         font-size: 20px;
+         padding: 5px 0;
+         &:after{
+            display: none;
+         }
+      }
+      .days{
+         display: none;
+      }
+   }
+   &:hover{
+      .content-action{
+         top: 100%;
+         @include opacity(1);
+      }
+   }
+}
+
+
+
+.campaigns-tabs{
+   .carousel-nav{
+      margin-bottom: 30px;
+      margin: 10px auto 30px;
+      max-width: 980px;
+      .slick-slide{
+         padding: 0 10px;
+         .link-campaign{
+            text-align: center;
+            display: block;
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            @include box-shadow(0px 0px 5px 1px rgba(0, 0, 0, 0.1));
+            background: $white;
+            &:hover{
+               cursor: pointer;
+            }
+         }
+         &.slick-center{
+            .link-campaign{
+               color: $white;
+               background: $theme-color;
+            }
+         }
+      }
+   }
+}
+
+.campaigns-list{
+   .campaign-block{
+      margin-bottom: 30px;
+      padding: 20px;
+      background: $white;
+      @include clearfix();
+      .image{
+         width: 35%;
+         float: left;
+         @media(max-width: 600px){
+            width: 100%;
+            padding: 0;
+         }
+         .funded{
+            top: 50%;
+            margin-top: -40px;
+         }
+      }
+      .campaign-content{
+         width: 65%;
+         float: left;
+         padding: 0 0 0 45px;
+         @media(max-width: 600px){
+            width: 100%;
+            padding: 0;
+         }
+      }
+   }
+}
+
+.campaign-single{
+   padding-bottom: 50px;
+   padding: 30px;
+   background: $white;
+   .campaign-content{
+      padding: 0;
+      .days{
+         margin-top: 6px;
+         display: block;
+      }
+   }
+   .campaign-content-inner{
+      .post-title{
+         font-size: 28px;
+         font-weight: 300;
+         margin-top: 5px;
+         margin-bottom: 25px;
+      }
+   }
+   .campaign-funded{
+      margin-bottom: 30px;
+      .content-funded-inner{
+         margin-bottom: 30px;
+      }
+   }
+   #popup-add-to-cart{ 
+      .modal-body{
+         padding: 30px;
+         .expired{
+            padding-top: 50px;
+            font-size: 24px;
+         }
+      }
+      .form-item{
+         margin-bottom: 10px;
+         input[type=radio]{
+            @include opacity(0);
+            &:hover{
+               cursor: pointer;
+            }
+            &:checked ~ label {
+               color: $theme-color;
+               &:before{
+                  border-color: $theme-color;
+               }
+            }
+         }
+         label{
+            &.option{
+               position: relative;
+               margin-left: 10px;
+               text-transform: uppercase;
+               font-size: 14px;
+               line-height: 21px;
+               @include transition(all 0.35s);
+               &:hover{
+                  cursor: pointer;
+               }
+               &:after{
+                  content: "";
+                  background: $white;
+                  position: absolute;
+                  left: -29px;
+                  top: 1px;
+                  @include size(18px, 18px);
+                  @include border-radius(50%);
+               }
+               &:before{
+                  content: "";
+                  position: absolute;
+                  left: -32px;
+                  top: -2px;
+                  @include size(24px, 24px);
+                  @include border-radius(50%);
+                  border: 3px solid $border-color;
+                  @include transition(all 0.35s);
+               }
+            }
+         }
+      }
+      .funded{
+         float: left;
+      }
+      .add-to-cart-content-inner{
+         padding-left: 190px;
+      }
+   }
+   .field--name-field-campaign-category{
+      @include clearfix(); 
+      .field__item{
+         a{
+            font-weight: 400;
+            font-family: $headings-font-family;
+            padding: 5px 20px;
+            background: #f5f5f5;
+            display: inline-block;
+            @include border-radius(5px);
+            float: left;
+            margin-right: 15px;
+            &:hover{
+               background: $theme-color;
+               color: $white;
+            }
+         }
+      }
+   }
+}
+
+.related-campaigns{
+   .campaign-block{
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid $border-color;
+      
+      .campaign-content{
+         padding: 0;
+      }
+      .content-action{
+         display: none;
+      }
+      .content-raised{
+         display: none;
+      }
+      &:last-child{
+         border-bottom: none;
+         margin-bottom: 0;
+      }
+   }
+}
+
+//cart
+.gva-cart-region {
+   margin-top: -5px;
+   .cart-block--summary__icon {
+      display: inline-block;
+   }
+   .cart-block--summary__count {
+    
+   }
+  .cart-block--contents {
+      padding: 20px 20px 10px;
+      border-top: 2px solid $theme-color;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      background: $white;
+      width: 380px;
+      right: 0;
+      .cart-block--contents__items{
+         overflow: hidden;
+         td{
+            vertical-align: middle;
+         }
+      }
+      .cart-block--contents__links{
+         font-weight: 600;
+         color: $theme-color;
+      }
+   }
+}
+
+.cart-form{
+   table{
+      thead{
+         @media(max-width: 550px){
+            display: none;
+         }
+      }
+      tr{
+         @media(max-width: 550px){
+            border-bottom: 1px solid $border-color;
+         }
+         td{
+            @media(max-width: 550px){
+               width: 100%;
+               display: block;
+               text-align: center;
+               padding: 5px 15px;
+               border: none;
+            }
+            &.views-field-edit-quantity{
+               text-align: center;
+               input{
+                  text-align: center;
+               }
+            }
+            &.views-field-remove-button{
+               text-align: center;
+               input{
+                  background: none;
+                  color: $theme-color;
+                  padding: 5px;
+               }
+            }
+         }
+      }
+   }
+}
+
+.layout-checkout-form{
+   margin-bottom: 30px;
+   .checkout-pane-payment-information{
+      div[class*='form-item']{
+         &:not(.js-form-type-radio):not(.js-form-type-checkbox){
+            margin-bottom: 10px;
+            width: 100%;
+            float: left;
+            display: block;
+            label{
+               display: block;
+               width: 100%;
+               float: left;
+            }
+            input, select{
+               width: 100%;
+               float: left;
+            }
+         }
+         &.js-form-type-radio{
+            line-height: 1;
+            margin-bottom: 5px;
+         }
+      }
+      div[id*='edit-payment-information-payment-method']{
+         margin-bottom: 15px;
+         legend{
+            margin-bottom: 10px;
+         }
+      }
+   }
+   .credit-card-form{
+      .form-item{
+         width: auto!important;
+         float: left;
+         margin-bottom: 5px;
+         margin-right: 15px;
+         input, select{
+            margin-top: 0;
+            line-height: 21px;
+         }
+      }
+      .credit-card-form__expiration{
+         display: inline-block;
+         float: left;
+      }
+   }
+}
+
+.profile-form,.commerce-payment-method-add-form{
+   div[class*='form-item']{
+      &:not(.js-form-type-radio):not(.js-form-type-checkbox){
+         margin-bottom: 10px;
+         width: 100%;
+         float: left;
+         display: block;
+         label{
+            display: block;
+            width: 100%;
+            float: left;
+         }
+         input, select{
+            width: 100%;
+            float: left;
+         }
+      }
+      &.js-form-type-radio{
+         line-height: 1;
+         margin-bottom: 5px;
+      }
+   }
+   .credit-card-form{
+      .form-item{
+         width: auto!important;
+         float: left;
+         margin-bottom: 5px;
+         margin-right: 15px;
+         input, select{
+            margin-top: 0;
+            line-height: 21px;
+         }
+      }
+      .credit-card-form__expiration{
+         display: inline-block;
+         float: left;
+      }
+   }
+}
+ 
+.views-profiles{
+   .views-col{
+      margin-top: 15px;
+      padding-bottom: 15px;
+      position: relative;
+      &:after{
+         content: '';
+         position: absolute;
+         left: 15px;
+         right: 15px;
+         bottom: 0;
+         z-index: 1;
+         border-bottom: 1px solid $border-color;
+      }
+   }
+}
+
+.path-user{
+   .customer-information{
+      float: left;
+      width: 100%;
+      border-bottom: 1px solid $border-color;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      > div{
+         float: left;
+         &.field--name-mail{
+            width: 33%;
+            @include media-breakpoint-down(sm){
+               width: 100%;
+            }
+         }
+         &.customer-billing{
+            width: 67%;
+            @include media-breakpoint-down(sm){
+               width: 100%;
+            }
+         }
+         .field__label{
+            width: 100%;
+            float: left;
+            font-weight: 600;
+            font-family: $headings-font-family;
+         }
+         .field__item{
+            float: left;
+            width: 100%;
+         }
+         &.customer-billing{
+            .address{
+               margin: 0;
+               span{
+                  margin-right: 6px;
+                  padding-right: 8px;
+                  position: relative;
+                  display: inline-block;
+                  &:after{
+                     content: '';
+                     @include size(1px, 15px);
+                     position: absolute;
+                     top: 6px;
+                     right: 0;
+                     z-index: 1;
+                     background: rgba(0, 0, 0, 0.2);
+                  }
+                  &:last-child{
+                     &:after{
+                        display: none;
+                     }
+                  }
+               }
+               br{
+                  display: none;
+               }
+            }
+         }
+      }
+   }
+   .order-information{
+      float: left;
+      width: 100%;
+      > .field{
+         float: left;
+         margin-right: 20px;
+         width: 30%;
+         @media(max-width: 300px){
+            width: 100%;
+         }
+         .field__label{
+            font-weight: 600;
+            color: $black;
+         }
+         &.field--name-order-items, &.field--name-total-price{ 
+            width: 100%;
+            margin-top: 20px;
+            margin-right: 0;
+         }
+      }
+   }
+}

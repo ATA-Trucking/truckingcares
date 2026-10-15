@@ -1,0 +1,13 @@
+<?php
+ 
+/**
+* Implements hook_preprocess_HOOK() for page templates.
+*/
+function charityplus_subtheme_preprocess_page(&$variables) {
+  // Ensure the global styling library is included.
+  if (isset($variables['page']['#attached']['library'])) {
+    $variables['page']['#attached']['library'][] = 'charityplus_subtheme/global-styling';
+  } else {
+    $variables['page']['#attached']['library'] = ['charityplus_subtheme/global-styling'];
+  }
+}

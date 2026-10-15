@@ -1,0 +1,54 @@
+<div class="topbar">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="topbar-content">                 
+          <div class="topbar-menu">  
+            
+            <div class="user-picture">
+              <a href="{{ path('user.page') }}">
+                {% if user_picture %}
+                  <img src="{{ file_url(user_picture) }}" alt="{{ username }}" title="{{ username }}"/>
+                {% else %}  
+                  <i class="fa fa-user"></i>
+                {% endif %}
+              </a>  
+            </div>
+
+            <div class="user-menu">
+              {% if page.topbar_menu %}
+                {{ page.topbar_menu }}                                                
+              {% endif %}
+            </div> 
+
+          </div>
+
+          <div class="topbar-right">
+            {% if page.topbar_social %}
+              <div class="topbar-social">                      
+                {{ page.topbar_social }}
+              </div>
+            {% endif %}
+
+            {% if page.search %}
+              <div class="gva-search-region search-region">
+                <span class="icon"><i class="gv-icon-52"></i></span>
+                <div class="search-content">  
+                  {{ page.search }}
+                </div>  
+              </div>
+            {% endif %}
+
+            {% if page.cart %}
+              <div class="gva-cart-region cart-region">                                    
+                  {{ page.cart }}                                  
+              </div>
+            {% endif %}
+            
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div> 
+</div>

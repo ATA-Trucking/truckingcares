@@ -1,0 +1,13 @@
+<div class="recent-posts-item" style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+  <div class="recent-posts-image" style="width: 250px; height: auto; margin-right: 10px;">
+    {{ fields.field_image.content }}
+  </div>
+  <div class="recent-posts-content" style="display: flex; flex-direction: column;">
+    <div class="recent-posts-title" style="font-weight: 500;"> <!-- Adjusted font weight to 500 -->
+      {{ fields.title.content }}
+    </div>
+    <span class="recent-posts-date" style="color: gray; font-size: 0.9em; margin-top: 5px;">
+      {{ fields.created.content }}
+    </span>
+  </div>
+</div>

@@ -1,0 +1,124 @@
+.gsc-tabs{
+  .tabs_horizontal{
+    .nav-tabs{
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      margin-left: -15px;
+      border: 0;
+      > li {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.33333%;
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+        text-align: center;
+        padding-left: 15px;
+        padding-right: 15px;
+        @include media-breakpoint-down(md){
+          padding: 0 8px;
+        }   
+        @media (max-width:480px){
+          -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+          max-width: 100%;
+          margin-bottom: 10px;
+        }   
+        > a {
+          background: $theme-color;
+          color: #fff;
+          padding: 20px;
+          font-size: 22px;
+          display: inline-block;
+          width: 100%;
+          @include media-breakpoint-down(md){
+            padding: 10px;
+            font-size: 18px;
+          }     
+          &.active {
+            background: #fff;
+            color: $black;
+          }
+        }        
+      }
+    }
+    .tab-content{
+      padding: 80px 0; 
+      @include media-breakpoint-down(lg){
+        padding: 60px 0;
+      } 
+      @include media-breakpoint-down(md){
+        .content-inner {
+          margin-bottom: 30px;
+        }
+      }    
+    }
+    .title-content {
+      font-size: 30px;
+      font-weight: 400;
+      margin-bottom: 50px;
+      @include media-breakpoint-down(md){
+        font-size: 26px;
+      }
+    }
+    img {
+      display: inline-block;
+    }
+    @include media-breakpoint-up(lg) {
+      .image {
+        padding-left: 80px;
+        text-align: right;
+      }
+      .box-content {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        > div {
+          -webkit-box-flex: 0;
+          -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+      }
+    }
+
+  }
+  .tabs_vertical{
+    .nav-tabs{
+      width: 25%;
+      float: left;
+      > li{
+        @include box-shadow(0 1px 6px rgba(0, 0, 0, 0.1));        
+        display: block;
+        margin-bottom: 20px;
+        width: 100%;
+        margin-right: 0;
+        padding-right: 0;
+        a{
+          width: 100%;
+          display: block;
+          padding: 10px 20px;
+          font-size: 18px;
+          background: $theme-color;
+          color: $white;
+          &.active {
+            background: $white;
+            color: $black;
+          }
+        }
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+    .tab-content{
+      width: 75%;
+      float: left;
+      padding-left: 15px;
+      .tab-pane{
+        background: $white;
+        @include box-shadow(0 1px 6px rgba(0, 0, 0, 0.1));
+        padding: 30px;
+      }  
+    }
+  } 
+}

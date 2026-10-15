@@ -1,0 +1,115 @@
+.gsc-progress-box{
+   &.style-v1 {
+      position: relative;
+      text-align: center;  
+      margin-top: 40px;    
+      background: #fff;
+      &:before, &:after {
+         content: "";
+         position: absolute;
+         top: 0;
+         left: 0;      
+         height: 4px;    
+         @include transition (all 0.35s);       
+      }
+      &:after {
+         width: 100%;
+         background: $theme-color;
+      }
+      &:before {
+         content: "";
+         width: 0;
+         background: $theme-color-second;      
+      }
+      &:hover {
+         &:before {
+            width: 100%;         
+         }
+         &:after {
+            width: 0;
+         }
+         span.step-number {
+            background: $theme-color-second;
+         }
+      }
+      .progress-inner{
+         padding-top: 70px;
+         padding-left: 80px;
+         padding-right: 80px;
+         padding-bottom: 70px;
+         border-right: 1px solid $border-color;
+         border-left: 1px solid $border-color;
+         border-bottom: 1px solid $border-color;
+         @media (max-width: 1025px) {
+            padding: 40px;
+         }
+      }
+      span.step-number {
+         position: absolute;
+         top: -28px;
+         text-align: center;
+         background: $theme-color;
+         line-height: 52px;
+         color: #fff;
+         font-size: 14px;
+         font-weight: 700;
+         @include size(52px, 52px);
+         @include border-radius(52px);
+         left: 50%;
+         @include transform(translateX(-50%));
+         @include transition (all 0.35s);
+         z-index: 10;
+      } 
+      .title {
+         font-size: 20px;
+        font-weight: 600;
+        line-height: 1.8;
+      }
+      .step-text {
+         font-size: 16px;
+         color: #7f7f7f;      
+      }
+   }
+   &.style-v2 {
+      padding-bottom: 20px;           
+      .box-content {
+         display: flex;
+         flex-flow: row wrap;
+         align-items: flex-start;
+      }
+      span.step-number {
+         display: inline-block;
+         line-height: 74px;
+         background: $theme-color-second;
+         text-align: center;
+         font-size: 16px;
+         font-weight: 700;
+         color: #fff;         
+         @include size(74px, 74px);
+         @include border-radius(74px);
+         position: relative;
+         z-index: 10;
+      }
+      .progress-inner {
+         width: calc(100% - 74px);
+         padding-left: 30px;
+      }
+      .title {
+         font-size: 20px;
+         font-weight: 800;
+         margin-bottom: 20px;
+      }
+   }
+   &.style-border {
+      position: relative;
+      &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 37px;
+          height: 100%;
+          width: 1px;
+          background: $border-color;
+      }
+   }
+} 
